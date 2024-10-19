@@ -1,3 +1,4 @@
+import 'package:culture/Screens/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -11,6 +12,20 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   String selectedCategory = 'All';
+   int _selectedIndex = 0;
+    void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    // Navigate to CartPage when shopping bag icon (index 2) is tapped
+    if (index == 2) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Cart()), // Navigate to CartPage
+      );
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Sizer(
@@ -93,11 +108,60 @@ class _HomeState extends State<Home> {
                               _buildProductCard('White Tee', '\$125.00',
                               'assets/images/images3.jpeg'),
                               _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/jacket2.jpeg'),
+                              _buildProductCard('White Tee', '\$125.00',
                               'assets/images/shoes.jpeg'),
                               _buildProductCard('White Tee', '\$125.00',
                               'assets/images/watch.jpeg'),
+                              
+
+
                               _buildProductCard('White Tee', '\$125.00',
-                              'assets/images/jacket.jpeg'),
+                              'assets/images/jacket3.jpeg'),
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/jacket4.jpeg'),
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/jacket5.jpeg'),
+
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/sneakers1.jpeg'),
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/sneakers2.jpeg'),
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/sneakers3.jpeg'),
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/sneakers4.jpeg'),
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/sneakers5.jpeg'),
+
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/watch1.jpeg'),
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/watch2.jpeg'),
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/watch3.jpeg'),
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/watch4.jpeg'),
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/watch5.jpeg'),
+
+                              _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/hoodie1.jpeg'),
+                               _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/hoodie2.jpeg'),
+                               _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/hoodie3.jpeg'),
+                               _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/hoodie4.jpeg'),
+                               _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/hoodie5.jpeg'),
+
+
+                               _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/caps1.jpeg'),
+                               _buildProductCard('White Tee', '\$125.00',
+                              'assets/images/caps2.jpeg'),
+                              
                         ],
                       ),
                     ],
@@ -106,34 +170,33 @@ class _HomeState extends State<Home> {
               ),
             ),
             bottomNavigationBar: BottomNavigationBar(
-              backgroundColor: Colors.black,
-              type: BottomNavigationBarType.fixed,
-              showSelectedLabels: false,
-              showUnselectedLabels: false,
-              selectedItemColor: Colors.white,
-              unselectedItemColor: Colors.grey,
-              items: [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.search),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_bag_outlined),
-                  label: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.settings),
-                  label: '',
-                ),
-              ],
-              onTap: (index) {
-                // Handle item selection here
-              },
-            ));
+        backgroundColor: Colors.black,
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
+        currentIndex: _selectedIndex, // Track the selected index
+        onTap: _onItemTapped, // Handle the navigation logic
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: '', // No label for this item
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: '', // No label for this item
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_bag_outlined),
+            label: 'Cart', // Label for the cart item
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: '', // No label for this item
+          ),
+        ],
+      ),);
       },
     );
   }
@@ -171,6 +234,8 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+
 
 Widget _buildProductCard(String name, String price, String imagePath) {
   return Container(
