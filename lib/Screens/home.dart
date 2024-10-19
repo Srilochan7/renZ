@@ -97,8 +97,7 @@ class _HomeState extends State<Home> {
                               _buildProductCard('White Tee', '\$125.00',
                               'assets/images/watch.jpeg'),
                               _buildProductCard('White Tee', '\$125.00',
-                              'assets/images/jacket
-                              .jpeg'),
+                              'assets/images/jacket.jpeg'),
                         ],
                       ),
                     ],
