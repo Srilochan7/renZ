@@ -1,10 +1,10 @@
 import 'dart:convert';
-import 'package:culture/auth/signuup.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:culture/Screens/home.dart';
+import 'package:culture/auth/signuup.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -19,21 +19,30 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   bool _isLoading = false;
 
-  Future<Map<String, dynamic>> login(String email, String password) async {
+ Future<Map<String, dynamic>> login(String email, String password) async {
     final url = Uri.parse('http://10.0.2.2:3000/login');
-    final response = await http.post(
-      url,
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({
-        'email': email,
-        'password': password,
-      }),
-    );
+    try {
+      final response = await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({
+          'email': email,
+          'password': password,
+        }),
+      );
 
-    if (response.statusCode == 200) {
-      return jsonDecode(response.body);
-    } else {
-      throw Exception('Failed to login: ${response.body}');
+      print('Response status: ${response.statusCode}');
+      print('Response body: ${response.body}');
+
+      final responseBody = jsonDecode(response.body);
+      if (response.statusCode == 200 && responseBody['status'] == true) {
+        return responseBody;
+      } else {
+        throw Exception(responseBody['error'] ?? 'Failed to login');
+      }
+    } catch (e) {
+      print('Login error: $e');
+      rethrow;
     }
   }
 
@@ -50,13 +59,17 @@ class _LoginPageState extends State<LoginPage> {
           final prefs = await SharedPreferences.getInstance();
           await prefs.setString('jwt_token', response['token']);
 
+          print('Login successful. Token: ${response['token']}');
+
           // Navigate to Home page
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home()));
         } else {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Login failed: Invalid credentials')));
+          print('Login response does not contain token: $response');
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Login successful, but no token received')));
         }
       } catch (error) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Login failed: $error')));
+        print('Login failed: $error');
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Login failed: ${error.toString()}')));
       } finally {
         setState(() {
           _isLoading = false;

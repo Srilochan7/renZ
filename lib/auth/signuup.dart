@@ -244,6 +244,10 @@ Future<void> handleLogin()async{
                     },),
                 ],
               ),
+              SizedBox(height: 50,),
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+              }, child: Text("DIrect"))
             ],
           ),
         ),
