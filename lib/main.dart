@@ -1,4 +1,5 @@
-import 'package:culture/auth/signuup.dart';
+import 'package:culture/ui/auth/signuup.dart';
+import 'package:culture/ui/onboard/intro.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignUpPage(),
+      home: Intro(),
     );
   }
 }
