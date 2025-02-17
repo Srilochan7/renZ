@@ -221,113 +221,123 @@
 
 
 
-import 'package:culture/ui/Screens/cart.dart';
-import 'package:culture/models/all_products.dart';
-import 'package:culture/ui/widgets/bottom_navbar.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:sizer/sizer.dart';
+  import 'package:culture/ui/Screens/cart.dart';
+  import 'package:culture/models/all_products.dart';
+  import 'package:culture/ui/widgets/bottom_navbar.dart';
+  import 'package:flutter/material.dart';
+  import 'package:google_fonts/google_fonts.dart';
+  import 'package:page_transition/page_transition.dart';
+  import 'package:sizer/sizer.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+  class Home extends StatefulWidget {
+    const Home({super.key});
 
-  @override
-  State<Home> createState() => _HomeState();
-}
+    @override
+    State<Home> createState() => _HomeState();
+  }
 
-class _HomeState extends State<Home> {
-  String selectedCategory = 'All';
-  //  int _selectedIndex = 0;
-  //   void _onItemTapped(int index) {
-  //   setState(() {
-  //     _selectedIndex = index;
-  //   });
+  class _HomeState extends State<Home> {
+    String selectedCategory = 'All';
+    //  int _selectedIndex = 0;
+    //   void _onItemTapped(int index) {
+    //   setState(() {
+    //     _selectedIndex = index;
+    //   });
 
-    // // Navigate to CartPage when shopping bag icon (index 2) is tapped
-    // if (index == 2) {
-    //   Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: Cart()));
+      // // Navigate to CartPage when shopping bag icon (index 2) is tapped
+      // if (index == 2) {
+      //   Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: Cart()));
+      // }
     // }
-  // }
-  @override
-  Widget build(BuildContext context) {
-    return Sizer(
-      builder: (context, orientation, deviceType) {
-        return Scaffold(
-            backgroundColor: Colors.black,
-            body: SafeArea(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.all(4.w),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(Icons.grid_view, color: Colors.white),
-                          CircleAvatar(
-                            radius: 5.w,
-                            backgroundImage: NetworkImage(
-                                'https://randomuser.me/api/portraits/men/18.jpg'),
-                          )
-                        ],
-                      ),
-                      SizedBox(height: 2.h),
-                      Text(
-                        'BE DIFFERENT',
-                        style: GoogleFonts.zenDots(
-                          color: Colors.grey,
-                          fontSize: 12.sp,
+    @override
+    Widget build(BuildContext context) {
+      return Sizer(
+        builder: (context, orientation, deviceType) {
+          return Scaffold(
+              backgroundColor: Colors.black,
+              body: SafeArea(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.all(4.w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Icon(Icons.grid_view, color: Colors.white),
+                            CircleAvatar(
+                              radius: 5.w,
+                              backgroundImage: NetworkImage(
+                                  'https://randomuser.me/api/portraits/men/18.jpg'),
+                            )
+                          ],
                         ),
-                      ),
-                      Text(
-                        'ren Z : Trend\nTrade and Turn',
-                        style: GoogleFonts.delaGothicOne(
-                          color: Colors.white,
-                          fontSize: 24.sp,
-                          fontWeight: FontWeight.w200
-                        ),
-                      ),
-                      SizedBox(height: 2.h),
-                      Text(
-                        'Drip without the commitment—buy, sell, or rent the hottest Gen Z fashion. Stay fresh, stay RenZ!:',
+                        SizedBox(height: 2.h),
+                        Text(
+                          'BE DIFFERENT',
                           style: GoogleFonts.zenDots(
-                          color: Colors.grey,
-                          fontSize: 12.sp,
+                            color: Colors.grey,
+                            fontSize: 12.sp,
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 2.h),                                                 
-                      
-                    Center(
-                      child: Container(
-                      height: 30.h,  // Adjust height
-                      width: 60.w,   // Adjust width to make it rectangular
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10), // Optional rounded corners
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/ld.jpg'), // Corrected way to use AssetImage
-                          fit: BoxFit.cover, // Adjust image fit
+                        Text(
+                          'ren Z : Trend\nTrade and Turn',
+                          style: GoogleFonts.delaGothicOne(
+                            color: Colors.white,
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.w200
+                          ),
                         ),
+                        SizedBox(height: 2.h),
+                        Text(
+                          'Drip without the commitment—buy, sell, or rent the hottest Gen Z fashion. Stay fresh, stay RenZ!:',
+                            style: GoogleFonts.zenDots(
+                            color: Colors.grey,
+                            fontSize: 12.sp,
+                          ),
+                        ),
+                        SizedBox(height: 2.h), 
+
+                        Text(
+                          'New Drips',
+                          style: GoogleFonts.delaGothicOne(
+                            color: Colors.white,
+                            fontSize: 24.sp,
+                            fontWeight: FontWeight.w200
+                          ),
+                        ),                                                
+                        
+                      Center(
+                        child: Container(
+                        height: 30.h,  // Adjust height
+                        width: 80.w,   // Adjust width to make it rectangular
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10), // Optional rounded corners
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/ld.jpg'), // Corrected way to use AssetImage
+                            fit: BoxFit.cover, // Adjust image fit
+                          ),
+                        ),
+                                          ),
                       ),
-                                        ),
-                    )
+
+                        
 
 
-
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            bottomNavigationBar: BottomNavbar(),
-      
+              // bottomNavigationBar: BottomNavbar(),
+        
+        );
+        },
       );
-      },
-    );
-  }
+    }
 
-}
+  }
 
 
 
