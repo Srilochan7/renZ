@@ -1,3 +1,4 @@
+import 'package:culture/ui/widgets/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
 class Mainscreen extends StatefulWidget {
@@ -10,6 +11,8 @@ class Mainscreen extends StatefulWidget {
 class _MainscreenState extends State<Mainscreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+    bottomNavigationBar: BottomNavbar(), 
+    );
   }
 }
