@@ -1,4 +1,4 @@
-import 'package:culture/ui/widgets/bottom_navbar.dart';
+import 'package:culture/presentation/widgets/bottom_navbar.dart';
 import 'package:flutter/material.dart';
 
 class Mainscreen extends StatefulWidget {
