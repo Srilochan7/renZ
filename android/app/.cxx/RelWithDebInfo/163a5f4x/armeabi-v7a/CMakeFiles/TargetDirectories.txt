@@ -1,0 +1,2 @@
+C:/Users/kalak/Downloads/Desktop/ren/frontend/android/app/.cxx/RelWithDebInfo/163a5f4x/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/kalak/Downloads/Desktop/ren/frontend/android/app/.cxx/RelWithDebInfo/163a5f4x/armeabi-v7a/CMakeFiles/rebuild_cache.dir

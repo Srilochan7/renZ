@@ -1,0 +1,19 @@
+# Flutter & Dart
+.dart_tool/
+build/
+.pub-cache/
+.idea/
+.vscode/
+pubspec.lock
+
+# Firebase
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+.firebase/
+.firebaserc
+firebase.json
+
+# Misc
+*.iml
+*.log
+.env
