@@ -9,5 +9,21 @@ sealed class AuthEvent {
 
 
 final class AuthLoginRequested extends AuthEvent{
+  final String email;
+  final String password;
+
+  AuthLoginRequested(this.email, this.password);
+
+}
+
+
+
+final class AuthSigninRequested extends AuthEvent{
+  final String email;
+  final String password;
+
+  AuthSigninRequested(this.email, this.password);
+
+  
 
 }

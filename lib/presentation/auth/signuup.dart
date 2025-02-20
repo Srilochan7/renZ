@@ -82,16 +82,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             backgroundColor: Color(0xFF3D3D3B),
                           ),
                           onPressed: () async {
-                           bool authResult = await AuthService().userSignUp(email: emailController.text, password: passwordController.text);
-
-                           if(authResult){
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(builder: (context) => Mainscreen()),
-                                (route) => false,  // This removes all previous routes
-                              );
-
-                           }
+                          
                           },
                           
                           child: Text(

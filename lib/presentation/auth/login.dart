@@ -85,16 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Color(0xFF3D3D3B),
                                 ),
-                                onPressed: () async {
-                                  bool loginResult = await AuthService().userLogin(email: _emailController.text, password: _passwordController.text);
-                                  
-                                  if(loginResult){
-                                     Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(builder: (context) => Mainscreen()),
-                                (route) => false,  // This removes all previous routes
-                              );
-                                  }
+                                onPressed: ()  {
                                 },
                                 child: Text(
                                   "Login",
