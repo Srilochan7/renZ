@@ -1,2 +1,0 @@
-C:/Users/kalak/Downloads/Desktop/ren/frontend/android/app/.cxx/RelWithDebInfo/163a5f4x/arm64-v8a/CMakeFiles/edit_cache.dir
-C:/Users/kalak/Downloads/Desktop/ren/frontend/android/app/.cxx/RelWithDebInfo/163a5f4x/arm64-v8a/CMakeFiles/rebuild_cache.dir
