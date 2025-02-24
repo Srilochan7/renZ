@@ -1,3 +1,4 @@
+import 'package:culture/presentation/Screens/checkout/checkout.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -184,7 +185,7 @@ class _CartState extends State<Cart> {
                       ),
                     ),
                     onPressed: () {
-                      
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Checkout()));
                     },
                     child: Text(
                       'Continue to Checkout',
