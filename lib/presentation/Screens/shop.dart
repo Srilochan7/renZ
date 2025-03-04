@@ -43,8 +43,8 @@ class Shop extends StatefulWidget {
 }
 
 class _ShopState extends State<Shop> {
-  String selectedCategory = 'All'; // Default selected category
-  final categories = ['All', 'Caps', 'Hoodies', 'Shoes', 'Accessories'];
+  // String selectedCategory = 'All'; // Default selected category
+  // final categories = ['All', 'Caps', 'Hoodies', 'Shoes', 'Accessories'];
 
   @override
   Widget build(BuildContext context) {
@@ -92,48 +92,48 @@ class _ShopState extends State<Shop> {
 ),
 
 // Category Horizontal Scrolling List
-Container(
-  height: 5.h,
-  margin: EdgeInsets.symmetric(vertical: 1.h),  // Adjusted vertical margin
-  child: ListView.builder(
-    scrollDirection: Axis.horizontal,
-    padding: EdgeInsets.symmetric(horizontal: 4.w),
-    itemCount: categories.length,
-    itemBuilder: (context, index) {
-      return Padding(
-        padding: EdgeInsets.only(right: 2.w),
-        child: GestureDetector(
-          onTap: () {
-            setState(() {
-              selectedCategory = categories[index];
-            });
-          },
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 4.w),
-            decoration: BoxDecoration(
-              color: selectedCategory == categories[index]
-                  ? Colors.white
-                  : Colors.grey[900],
-              borderRadius: BorderRadius.circular(25),
-            ),
-            alignment: Alignment.center,
-            child: Text(
-              categories[index],
-              style: GoogleFonts.poppins(
-                color: selectedCategory == categories[index]
-                    ? Colors.black
-                    : Colors.white,
-                fontWeight: selectedCategory == categories[index]
-                    ? FontWeight.bold
-                    : FontWeight.normal,
-              ),
-            ),
-          ),
-        ),
-      );
-    },
-  ),
-),
+// Container(
+//   height: 5.h,
+//   margin: EdgeInsets.symmetric(vertical: 1.h),  // Adjusted vertical margin
+//   child: ListView.builder(
+//     scrollDirection: Axis.horizontal,
+//     padding: EdgeInsets.symmetric(horizontal: 4.w),
+//     itemCount: categories.length,
+//     itemBuilder: (context, index) {
+//       return Padding(
+//         padding: EdgeInsets.only(right: 2.w),
+//         child: GestureDetector(
+//           onTap: () {
+//             setState(() {
+//               selectedCategory = categories[index];
+//             });
+//           },
+//           child: Container(
+//             padding: EdgeInsets.symmetric(horizontal: 4.w),
+//             decoration: BoxDecoration(
+//               color: selectedCategory == categories[index]
+//                   ? Colors.white
+//                   : Colors.grey[900],
+//               borderRadius: BorderRadius.circular(25),
+//             ),
+//             alignment: Alignment.center,
+//             child: Text(
+//               categories[index],
+//               style: GoogleFonts.poppins(
+//                 color: selectedCategory == categories[index]
+//                     ? Colors.black
+//                     : Colors.white,
+//                 fontWeight: selectedCategory == categories[index]
+//                     ? FontWeight.bold
+//                     : FontWeight.normal,
+//               ),
+//             ),
+//           ),
+//         ),
+//       );
+//     },
+//   ),
+// ),
 
               
               SizedBox(height: 1.h),

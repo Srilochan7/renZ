@@ -1,5 +1,4 @@
 import 'package:culture/logic/blocs/auth/bloc/auth_bloc.dart';
-import 'package:culture/logic/services/auth_service.dart';
 import 'package:culture/mainScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
